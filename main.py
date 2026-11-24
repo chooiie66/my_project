@@ -13,6 +13,13 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates" ) # 특정 위치를 지정할 수 있음.
 # 정적 데이터의 위치, URL 표기법을 설정. (인지시킨 것)-
 app.mount("/static",StaticFiles(directory="static"),name="static",)
-# 3. 라우팅 구성/정의
 
-# 4. 서버가동 => 명령어 대체+
+# 3. 라우팅 구성/정의 -> 메소드 결정 (get방식 => 홈페이지)
+# "/" -> url 정의 =< 여기서는 홈페이지를 의미함.
+@app.get("/") #홈페이지가 요청되면 누가(함수) 처리할것인가?
+def home(req:Request):  # 요청 객체가 함수 인자로 전달됨
+    # 비즈니스 로직 => 생략
+    # 응답 ->  결론은 문자열 (json 형식, html 형식, XML 형식, ...)
+    return templates.TemplateResponse(req, "index.html")
+
+# 4. 서버가동 => 명령어 대체
