@@ -1,0 +1,18 @@
+# 대시보드 홈페이지
+# 1. 모듈 가져오기
+from fastapi import FastAPI, Request
+# 백엔드 서버 구성 시 템플릿 엔진 사용 = 서버측에서 동적으로 html을 생성 응답. => SSR (server side rendering)
+# 파이썬 계열 주로 사용되는 템플릿 엔진 jinja2 <= 웹, LLM 프롬프트 구성 시 사용. => AI 
+# html 관여
+from fastapi.templating import Jinja2Templates
+# 정적 데이터 처리용 => css,js 관여
+from fastapi.staticfiles import StaticFiles
+
+# 2. fastapi 앱 생성, 템플릿 엔진, 정적 데이터 처리 설정
+app = FastAPI()
+templates = Jinja2Templates(directory="templates" ) # 특정 위치를 지정할 수 있음.
+# 정적 데이터의 위치, URL 표기법을 설정. (인지시킨 것)-
+app.mount("/static",StaticFiles(directory="static"),name="static",)
+# 3. 라우팅 구성/정의
+
+# 4. 서버가동 => 명령어 대체+
