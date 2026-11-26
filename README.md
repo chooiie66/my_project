@@ -14,3 +14,46 @@ CI/CD를 위한 프로젝트. 간단한 대시보드를 구성
         - Dockerfile, Docker-compose
 
 # 구조
+```
+tree /F /A >> struct.txt
+```
+```
+폴더 PATH의 목록입니다.
+볼륨 일련 번호는 C0F3-E676입니다.
+/
+|   .gitignore
+|   app.py
+|   docker-compose.yml
+|   README.md
+|   struct.txt
+|   
++---.github
+|   \---workflows
+|           deploy.yml
+|           
++---app
+|   |   Dockerfile
+|   |   main.py
+|   |   requirements.txt
+|   |   
+|   +---static
+|   |   +---assets
+|   |   |   \---img
+|   |   |       |   *.jpg|*.png
+|   |   |               
+|   |   +---css
+|   |   |       *.css
+|   |   |       
+|   |   \---js
+|   |           *.js
+|   |           
+|   \---templates
+|           index.html
+|           login.html
+|           
++---nginx
+|       Dockerfile
+|       web.conf
+        
+
+```
