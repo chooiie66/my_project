@@ -2,35 +2,15 @@
 CI/CD를 위한 프로젝트. 간단한 대시보드를 구성
 
 # 사용 소프트웨어
- - 백엔드 : FastAPI, uvicorn
- - 프론트 : bootStrap 기반 adminlte 제품 4.0.0 버전
- - DB : X
- - Web 서버: X
+- app
+    - 백엔드 : FastAPI, uvicorn
+    - 프론트 : bootStrap 기반 adminlte 제품 4.0.0 버전
+- DB 
+    - mysql
+- proxy
+    - nginx
+- 가상환경 구성
+    - docker
+        - Dockerfile, Docker-compose
 
-# 로컬 PC에 python 가상환경 구성
-```
-# 가상환경 구성
-python -m venv dev
-# 가상환경 활성화
-./dev/Scripts/activate.bat
-or
-source dev/bin/activate
-or
-new Terminal 
-
-#가상환경 진입 형태
-(dev) ... >
-
-#패키지 설치
- (dev) > pip install -r requirements.txt
-```
-
-# 코드 작성
-- main.py
-
-# 서버 가동
-```
-# uvicorn 모듈명(엔트리포인트):<fastapi명> 옵션
-# --reload : 코드 수정 => 저장 => 감지 => 재가동 : 수정된 내용을 반영하는 옵션
-uvicorn main:app --reload
-```
+# 구조
