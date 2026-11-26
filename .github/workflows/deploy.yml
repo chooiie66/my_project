@@ -52,7 +52,7 @@ jobs:
 
               # 서비스 재가동  명령 전달
             - name : Restart Service
-              uses : appleboy/ssha-action@master
+              uses : appleboy/ssh-action@master
               with:
               #Ec2 접속 정보
                   host : ${{ secrets.HOST }}
