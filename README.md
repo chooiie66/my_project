@@ -61,6 +61,11 @@ tree /F /A >> struct.txt
 ```
 docker-compose up -d --build
 
+#컨테이너 구성
+docker-compose up -d --build
+
+# 다시구성
+docker-compose down
 
 # 접속 테스트, 브라우저
 http://localhost
