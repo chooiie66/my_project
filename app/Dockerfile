@@ -14,12 +14,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # 웹 개발시 사용했던 모든 리소스를 카피
-# main.py만 카피됨
-# copy . . + .dockerignore(제외될 리소스 등 기술, 필터링)
-COPY main.py .
+# 임시로 불필요한 파일도 다 카피
+COPY . .
 
-#도커 컴포즈에서 컨트롤.
-# 데몬 구동 => 서버 가동 (통상 uvicorn 사용)
-#CMD ["fastapi", "run", "app/main.py", "--port", "80"]
-# 포트는 기본값 8000 번.
-#CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0"]
+# 서버 가동 => 컴포즈에서 처리
