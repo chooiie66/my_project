@@ -57,3 +57,11 @@ tree /F /A >> struct.txt
         
 
 ```
+# 개발 환경(로컬 PC) 구동
+```
+docker-compose up -d --build
+
+
+# 접속 테스트, 브라우저
+http://localhost
+```
