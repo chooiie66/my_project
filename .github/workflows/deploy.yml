@@ -23,19 +23,19 @@ jobs:
 
             # 3. fastapi app 이미지 빌드 푸시
             - name: build & push fastapi app
-            - uses: docker/build-push-action@v4
-            - with: 
-                context: ./app
-                file: ./app/Dockerfile
+              uses: docker/build-push-action@v4
+              with:
+                context: app
+                file: app/Dockerfile
                 push: true
                 tags: ${{ secrets.DOCKER_USERNAME }}/fastapi-app:1.0
             
             # 4. nginx proxy 이미지 빌드 푸시
             - name: build & push nginx proxy app
-            - uses: docker/build-push-action@v4
-            - with: 
-                context: ./nginx
-                file: ./nginx/Dockerfile
+              uses: docker/build-push-action@v4
+              with:
+                context: nginx
+                file: nginx/Dockerfile
                 push: true
                 tags: ${{ secrets.DOCKER_USERNAME }}/nginx-proxy:1.0
     cd:
